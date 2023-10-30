@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = FastAPI()
 
 ## Query 1
-@app.get('/Developer')
+@app.get('Porcentaje de juegos free por desarrollador')
 def Developer(developer:str):
     df_steam=pd.read_csv('df_steam.csv')
     df_developer = df_steam[df_steam['developer'] == developer]
@@ -31,8 +31,8 @@ def Developer(developer:str):
     return respuesta
 
 ## Query 2
-@app.get('/User_data')
-def obtener_informacion_juegos(user_id:str):
+@app.get('Informacion de usuario')
+def User_data(user_id:str):
     df_sub2=pd.read_csv('df_sub2.csv')
     df_usuario = df_sub2[df_sub2['user_id'] == user_id]
     if df_usuario.empty:
@@ -49,8 +49,8 @@ def obtener_informacion_juegos(user_id:str):
     return informacion
 
 ## Query 3
-@app.get('/User_for_genre')
-def obtener_usuario_mas_horas_jugadas_por_genero(genero:str):
+@app.get('Usuario con mas horas por genero')
+def User_for_genre(genero:str):
     with gzip.open('df_sub1.csv.gz', 'rb') as f:
         df_sub1 = pd.read_csv(f)
     df_genero = df_sub1[df_sub1['genres'].apply(lambda x: genero in x)]
@@ -68,8 +68,8 @@ def obtener_usuario_mas_horas_jugadas_por_genero(genero:str):
     return respuesta
 
 ## Query 4
-@app.get('/Best_developer_year')
-def top_desarrolladores_recomendados_por_anio(anio:int):
+@app.get('Top desarrolladores por anio')
+def Best_developer_year(anio:int):
     df_sub2=pd.read_csv('df_sub2.csv')
     df_filtrado = df_sub2[(df_sub2['release_date'] == anio) & (df_sub2['recommend'] == True) & (df_sub2['sentiment_analysis'] == 2)]
     if df_filtrado.empty:
@@ -85,8 +85,8 @@ def top_desarrolladores_recomendados_por_anio(anio:int):
     return resultado
 
 ## Query 5
-@app.get('/Developer_reviews_analysis')
-def sumar_sentimientos_por_desarrollador(developer:str):
+@app.get('Analisis de resenia por desarrollador')
+def Developer_reviews_analysis(developer:str):
     df_sub2=pd.read_csv('df_sub2.csv')
     df_filtrado = df_sub2[df_sub2['developer'] == developer]
     if df_filtrado.empty:
@@ -102,8 +102,8 @@ def sumar_sentimientos_por_desarrollador(developer:str):
     return resultado
 
 ## Modelo de recomendacion id_juego
-@app.get('/Id_game_recommendation')
-def get_recommendations(input_product_id):
+@app.get('Recomendacion de juego por id')
+def recomendacion_juego(input_product_id):
     data_encoded=pd.read_csv('ModeloML1.csv')
     juegos=[]
     input_product = data_encoded[data_encoded['item_id'] == int(input_product_id)]
