@@ -2,13 +2,15 @@
 
 Este proyecto consiste en una base de datos ficticia de juegos de la plataforma Steam y un sistema de recomendación basado en la similitud del coseno.
 
+![Logo de Steam](https://github.com/AleGS2108/PI-ML_OP/blob/main/resources/Steam.jpeg)
+
 Los datasets empleados pueden encontrarse en el siguiente link ["Datasets originales"](https://drive.google.com/drive/folders/1HqBG2-sUkz_R3h1dZU5F2uAzpRn7BSpj).
 
 Información:
 
-- australian_user_reviews
-- australian_users_items
-- output_steam_games
+- australian_user_reviews: incluye columnas como desarrollador, generos, nombre, fecha de lanzamiento, precio, accesso anticipado, entre otras.
+- australian_users_items: incluye columnas como id de usuario, id de juego, horas jugadas, entre otras.
+- output_steam_games: incluye columnas como id de usuario, id de juego, recomendaciones, fecha de posteo, es de ayuda, es divertido, entre otras.
 
 ## Data Engineering
 
@@ -36,7 +38,7 @@ En la fase de Data Science, se desarrolló un modelo de recomendación basado en
 
 ## Diagrama de flujo
 
-
+![Diagrama](https://github.com/AleGS2108/PI-ML_OP/blob/main/resources/Diagrama%20de%20flujo.png)
 
 ## API con FastAPI
 
