@@ -34,6 +34,10 @@ En la fase de Data Science, se desarrolló un modelo de recomendación basado en
 
 3. **Evaluación del Modelo**: Se evaluó el rendimiento del modelo en función de un heatmap basado en el juego analizado y la lista de juegos recomendados brindado por el modelo.
 
+## Diagrama de flujo
+
+
+
 ## API con FastAPI
 
 Para acceder a la funcionalidad de este proyecto, se ha implementado una API utilizando [FastAPI](https://fastapi.tiangolo.com/). La API permite realizar las consultas solicitadas.
