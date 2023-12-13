@@ -1,4 +1,4 @@
-# Proyecto Individual N°1: ML-OPS
+# Proyecto Individual N°1 de ML-OPS: "Recomendación de Steam"
 
 Este proyecto consiste en una base de datos ficticia de juegos de la plataforma Steam y un sistema de recomendación basado en la similitud del coseno.
 
